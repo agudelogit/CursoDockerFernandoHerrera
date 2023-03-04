@@ -1,0 +1,53 @@
+***************************************
+** Corre un contenedor con su imagen **
+docker container run <<imagen>>
+
+
+
+***************************************
+** Listar los contenedores que están corriendo **
+docker container ls
+docker container ps
+docker ps
+
+
+
+***************************************
+** Listar los contenedores **
+docker container ls -a
+docker container ps -a
+docker ps -a
+
+
+
+***************************************
+** Detener un contenedor **
+docker stop <<contenedor1>> <<contenedor2>>  <<contenedor3...>>
+
+
+
+***************************************
+** Eliminar uno o varios contenedores **
+docker rm <<contenedor1>> <<contenedor2>>  <<contenedor3...>>
+NOTA: 
+Se puede eliminar uno o varios
+si se elimina con container id, se puede escribir los primeros 3 digitos a forma de shortcut
+
+
+***************************************
+** Eliminar todos los contenedores detenidos **
+docker container prune
+
+
+
+***************************************
+** Listar imagenes **
+docker images 
+
+
+
+***************************************
+** Eliminar imagenes **
+docker image rm <<image-ID>> o <<ID1 ID2 ID3…>>
+docker rmi IMAGE
+docker rmi getting-started
