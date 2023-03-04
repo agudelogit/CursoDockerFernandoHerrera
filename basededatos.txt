@@ -1,0 +1,50 @@
+******************POSTGRES*********************
+***********************************************
+** Descarga de postgres **
+docker pull postgres
+NOTE: Por defecto si no se colocan parámetros, toma la última versión
+
+***************************************
+** Iniciar una instancia **
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+** Con puerto **
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -dp 5432:5432 postgres
+
+
+
+***************************************
+** Iniciar una instancia, como la de arriba pero en varias líneas **
+docker container run \
+--name postgres-alpha \
+-e POSTGRES_PASSWORD=mypass1 \
+-dp 5432:5432 \
+postgres
+
+docker container run \
+--name postgres-beta \
+-e POSTGRES_PASSWORD=mypass1 \
+-dp 5433:5432 \
+postgres:14-alpine3.17
+
+
+
+
+**********MARIADB (jammy versión)**************
+***********************************************
+
+** Descarga de mariadb **
+docker pull mariadb:jammy
+
+
+** Iniciar una instancia **
+docker container run \
+-e MARIADB_RANDOM_ROOT_PASSWORD=yes \
+-dp 3306:3306 \
+mariadb:jammy
+
+
+** Revisar logs **
+docker container logs <<ID>>
+
+** Revisar logs y realizar seguimiento en tiempo real '-f'**
+docker container logs -f <<ID>>

@@ -32,6 +32,14 @@ docker rm <<contenedor1>> <<contenedor2>>  <<contenedor3...>>
 NOTA: 
 Se puede eliminar uno o varios
 si se elimina con container id, se puede escribir los primeros 3 digitos a forma de shortcut
+los contenedor que están corriendo no se pueden eliminar
+
+
+
+***************************************
+** Eliminar uno o varios contenedores de manera forzada '-f'**
+docker rm -f <<contenedor1>> <<contenedor2>>  <<contenedor3...>>
+
 
 
 ***************************************
@@ -50,4 +58,15 @@ docker images
 ** Eliminar imagenes **
 docker image rm <<image-ID>> o <<ID1 ID2 ID3…>>
 docker rmi IMAGE
-docker rmi getting-started
+
+
+
+***************************************
+** Correr contenedor y configurar con puertos <<puerto del pc:puerto del contenedor>> **
+docker container run -dp 8080:80 docker/getting-started
+
+
+
+***************************************
+** Iniciar un contenedor **
+docker start <<contenedor1>> <<contenedor2>>  <<contenedor3...>>
