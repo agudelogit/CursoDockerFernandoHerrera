@@ -1,0 +1,19 @@
+** Crear un nuevo volumen **
+docker volume create todo-db
+ 
+** Listar los volúmenes creados **
+docker volume ls
+ 
+** Inspeccionar el volumen específico **
+docker volume inspect todo-db
+ 
+** Remueve todos los volúmenes no usados **
+docker volume prune
+ 
+** Remueve uno o más volúmenes especificados **
+ docker volume rm VOLUME_NAME
+ 
+** Usar un volumen al correr un contenedor **
+docker run -v todo-db:/etc/todos getting-started
+ 
+

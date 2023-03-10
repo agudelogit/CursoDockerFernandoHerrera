@@ -43,6 +43,31 @@ docker container run \
 mariadb:jammy
 
 
+** Iniciar una instancia con --env,-e, o variables de entorno ** 
+
+docker container run \
+-dp 3306:3306 \
+--name world-db \
+--env MARIADB_PASSWORD=user-password \
+--env MARIADB_USER=example-user \
+--env MARIADB_ROOT_PASSWORD=root-secret-password \
+--env MARIADB_DATABASE=world-db \
+mariadb:jammy
+
+
+** Iniciar una instancia con volumenes y --env,-e, o variables de entorno ** 
+
+docker container run \
+-dp 3306:3306 \
+--name world-db \
+--env MARIADB_PASSWORD=user-password \
+--env MARIADB_USER=example-user \
+--env MARIADB_ROOT_PASSWORD=root-secret-password \
+--env MARIADB_DATABASE=world-db \
+--volume world-db:/var/lib/mysql \
+mariadb:jammy
+
+
 ** Revisar logs **
 docker container logs <<ID>>
 
