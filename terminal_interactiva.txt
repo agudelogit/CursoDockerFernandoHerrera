@@ -1,0 +1,20 @@
+** Iniciar un comando shell dentro del contenedor. **
+
+docker exec -it <CONTAINER> <EXECUTABLE>
+
+** ejemplo **
+
+docker exec -it web bash 
+docker exec -it web /bin/sh
+
+
+
+
+
+docker container run \
+-d \
+--name postgres-db \
+-e POSTGRES_PASSWORD=123456 \
+-v postgres-db:/var/lib/postgresql/data \
+postgres:15.1
+

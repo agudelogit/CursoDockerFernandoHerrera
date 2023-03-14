@@ -15,5 +15,42 @@ docker volume prune
  
 ** Usar un volumen al correr un contenedor **
 docker run -v todo-db:/etc/todos getting-started
+
+
+** Iniciar una instancia con volumenes y --env,-e, o variables de entorno ** 
+
+docker container run \
+-dp 3306:3306 \
+--name world-db \
+--env MARIADB_PASSWORD=user-password \
+--env MARIADB_USER=example-user \
+--env MARIADB_ROOT_PASSWORD=root-secret-password \
+--env MARIADB_DATABASE=world-db \
+--volume world-db:/var/lib/mysql \
+mariadb:jammy
+
+
+
+** Iniciar una instancia con volumenes de nest ** 
+
+ docker container run \
+--name nest-app \
+-w /app \
+-p 80:3000 \
+-v "$(pwd)":/app \
+node:18.15.0-alpine3.17 \
+sh -c "yarn install && yarn start:dev"
+
+
+
+** Iniciar una instancia con volumenes de nest de manera detach - deja la ejecución en segundo plano ** 
+
+ docker container run \
+--name nest-app \
+-w /app \
+-dp 80:3000 \
+-v "$(pwd)":/app \
+node:18.15.0-alpine3.17 \
+sh -c "yarn install && yarn start:dev"
  
 
